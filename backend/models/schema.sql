@@ -1,4 +1,7 @@
--- DROP DATABASE ECMA_Project_5;
+
+DROP DATABASE ECMA_Project_5;
+
+
 CREATE DATABASE ECMA_Project_5;
 
 USE ECMA_Project_5;
