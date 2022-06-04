@@ -8,7 +8,17 @@ import "./style.css";
 
 const Product = () => {
   //! redux =========
+  // const array = ["a", "s", "u", "y", "a", "a", "a", "a", "a", "a",]
+
   const dispatch = useDispatch();
+
+  const state = useSelector((state) => {
+
+
+    return {
+      search: state.search.search
+    };
+  });
 
   const { token, isLoggedIn } = useSelector((state) => {
     // console.log(state);
@@ -16,6 +26,7 @@ const Product = () => {
     return {
       token: state.auth.token,
       isLoggedIn: state.auth.isLoggedIn,
+
     };
   });
   //! redux =========
@@ -57,6 +68,16 @@ const Product = () => {
 
   return (
     <div>
+
+      <select name="" id="" >
+        {state.search.length && state.search.map((element, index) => {
+
+          return <option value={index}  key={index}><>{element.title} {element.image}</></option>
+        })
+        })
+      </select>
+
+
       <div className="products">
         {products.length &&
           products.map((e, i) => {
