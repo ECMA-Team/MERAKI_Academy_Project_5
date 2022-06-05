@@ -1,5 +1,5 @@
 import "./App.css";
-import Dashboard from "./components";
+import Dashboard from "./components/NavBar";
 import Register from "./components/register/index";
 import Login from "./components/login/index";
 import Product from "./components/product/index";
@@ -21,13 +21,14 @@ function App() {
         Welcome APP
         <Dashboard />
         <Routes>
+      
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/product" element={<Product />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/product/:id" element={<OneProduct />}></Route>
           <Route path="/" element={<Brand />}></Route>
-          // <Route path="/category" element={<Category />}></Route>
+          <Route path="/category" element={<Category />}></Route>
           <Route path="/category/Admin" element={<CategoryAdmin />}></Route>
           <Route path="/allCategory/:brand" element={<CatByBrand />}></Route>
           <Route

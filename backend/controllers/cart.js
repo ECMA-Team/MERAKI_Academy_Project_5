@@ -152,7 +152,7 @@ const getCartItem = (req, res) => {
 
   connection.query(query, data, (err, result) => {
     if (err) {
-      res.status(409).json({
+      return  res.status(409).json({
         success: false,
         Message: "Server error",
         err: err,

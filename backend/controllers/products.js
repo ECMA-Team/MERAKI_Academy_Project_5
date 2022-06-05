@@ -49,14 +49,14 @@ const getProductById = (req, res) => {
 
     connection.query(query, data, (err, result) => {
         if (err) {
-            res.status(500).json({
+         return   res.status(500).json({
                 success: false,
                 massage: "Server Error",
                 err: err,
             });
         }
         if (!result.length) {
-            res.status(404).json({
+           return res.status(404).json({
                 success: false,
                 massage: "The Product is Not Found",
             });
@@ -116,7 +116,7 @@ const updateProductById = (req, res) => {
             });
         }
         if (!result.length) {
-            res.status(404).json({
+           return res.status(404).json({
                 success: false,
                 massage: `The Product: ${id} is not found`,
                 err: err,
@@ -140,7 +140,7 @@ const updateProductById = (req, res) => {
 
             connection.query(query, data, (err, result) => {
                 if (result.affectedRows != 0)
-                    res.status(201).json({
+                 res.status(201).json({
                         success: true,
                         massage: `Product updated`,
                         result: result,

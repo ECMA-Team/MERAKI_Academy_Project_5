@@ -13,7 +13,7 @@ const login = (req, res) => {
       console.log(result);
       bcrypt.compare(password, result[0].password, (err, response) => {
         if (err) {
-          res.status(403).json({
+             res.status(403).json({
             success: false,
             message: `The password you’ve entered is incorrect`,
           });

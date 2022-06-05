@@ -7,7 +7,7 @@ const addBrand = (req, res) => {
     const data = [brand, image];
     connection.query(query, data, (err, result) => {
         if (err) {
-            res.status(500).json({
+            return res.status(500).json({
                 success: false,
                 massage: "server error",
                 err: err,
@@ -26,7 +26,7 @@ const getAllBrand = (req, res) => {
     const query = `SELECT * FROM brands WHERE is_deleted=0 ;`;
     connection.query(query, (err, result) => {
         if (err) {
-            res.status(500).json({
+            return res.status(500).json({
                 success: false,
                 massage: "server error",
                 err: err,
@@ -46,14 +46,14 @@ const getBrandById = (req, res) => {
     const data = [id];
     connection.query(query, data, (err, result) => {
         if (err) {
-            res.status(500).json({
+            return  res.status(500).json({
                 success: false,
                 massage: "Server Error",
                 err: err,
             });
         }
         if (!result.length) {
-            res.status(404).json({
+            return res.status(404).json({
                 success: false,
                 massage: "The brand is Not found",
 
@@ -109,7 +109,7 @@ const updateBrandById = (req, res) => {
             });
         }
         if (!result.length) {
-            res.status(404).json({
+            return res.status(404).json({
                 success: false,
                 massage: `The brand: ${id} is not found`,
                 err: err,

@@ -16,10 +16,10 @@ const createPermission = (req, res) => {
 
       connection.query(query, data, (err, result) => {
         if (err) {
-          res.status(500).json({ err });
+          return  res.status(500).json({ err });
         }
         if (result) {
-          res.status(201).json({
+          return    res.status(201).json({
             success: true,
             message: "permission created",
             result: result,

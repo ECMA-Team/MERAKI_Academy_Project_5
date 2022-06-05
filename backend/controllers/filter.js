@@ -6,7 +6,7 @@ const getBrandCat = (req, res) => {
   const data = [brand];
   connection.query(query, data, (err, result) => {
     if (err) {
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         massage: "server error",
         err: err,
@@ -28,7 +28,7 @@ const getProCategory = (req, res) => {
   const data = [category, sub_category, brand];
   connection.query(query, data, (err, result) => {
     if (err) {
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         massage: "server error",
         err: err,
@@ -50,7 +50,7 @@ const getProCB = (req, res) => {
   const data = [category, brand];
   connection.query(query, data, (err, result) => {
     if (err) {
-      res.status(500).json({
+      return  res.status(500).json({
         success: false,
         massage: "server error",
         err: err,
@@ -71,7 +71,7 @@ const subCByCat = (req, res) => {
   const data = [category];
   connection.query(query, data, (err, result) => {
     if (err) {
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         massage: "server error",
         err: err,

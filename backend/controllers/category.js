@@ -9,7 +9,7 @@ const Createcategory = (req, res) => {
     connection.query(query, data, (err, result) => {
         console.log(result);
         if (err) {
-            res.status(500).json({
+            return res.status(500).json({
                 success: false,
                 massage: "Server error",
                 err: err,
@@ -59,7 +59,7 @@ const getAllCategory = (req, res) => {
     connection.query(query, (err, result) => {
         console.log(result);
         if (err) {
-            res.status(500).json({
+            return  res.status(500).json({
                 
                 success: false,
                 massage: "server error",
