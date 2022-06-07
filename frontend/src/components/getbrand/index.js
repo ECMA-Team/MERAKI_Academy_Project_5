@@ -85,7 +85,7 @@ const Getbrand = () => {
             {category.map((elementCat, index) => {
               if (elementCat.brand_id == element.id) {
                 return <div key={index}><li onClick={() => 
-                  { navigate(`allCategory/${elementCat.id}/PRO/${element.id}/${elementCat.id}`) }}>{elementCat.category}</li></div>
+                  { navigate(`allCategory/${elementCat.category}/PRO/${element.brand}/${elementCat.category}`) }}>{elementCat.category}</li></div>
               } else (<></>)
             })}</div>)
         })}
