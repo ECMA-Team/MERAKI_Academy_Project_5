@@ -131,14 +131,4 @@ CREATE TABLE rate (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE orders (
-    id INT  AUTO_INCREMENT NOT NULL,
-    user_id INT,
-    cart_id INT,
-   timestamp  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (cart_id) REFERENCES cart (id),
-    FOREIGN KEY (user_id) REFERENCES users (id),
-    is_deleted TINYINT DEFAULT 0,
-    PRIMARY KEY (id)
-);
 

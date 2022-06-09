@@ -21,7 +21,7 @@ import UpdateProductAdmin from "./components/productAdmin/UpdateProduct";
 // import Getbrand from "./components/getbrand";
 import Upload from "./components/upload";
 import Sold from "./components/sold";
-
+import Footer from "./components/foter";
 function App() {
 
   return (
@@ -54,8 +54,11 @@ function App() {
       
    
         <Sold/>
+        
+        <Footer/>
     </div>
   );
 }
+
 
 export default App;
