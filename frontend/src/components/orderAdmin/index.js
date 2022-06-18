@@ -84,8 +84,9 @@ const AdminOrder = () => {
         </tr>
         {order.length &&
           order.map((element, index) => {
+            console.log(element[0].create_Date)
+
             return (
-              
               <tr key={index}>
                 <td>
                   <p className="user_order">{index + 1}</p>
@@ -96,7 +97,8 @@ const AdminOrder = () => {
                 </td>
 
                 <td>
-                  <p className="number_product">{element.length}</p>
+                  <p className="number_product"> {/* {element[0].create_Date} */}
+                  {new Date(element[0].create_Date).toLocaleString("es-CL")}</p>
                 </td>
                 <td>
                   {element.length &&

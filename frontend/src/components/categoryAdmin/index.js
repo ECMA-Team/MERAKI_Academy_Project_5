@@ -156,7 +156,7 @@ const CategoryAdmin = () => {
         <table id="adminT">
           <tr>
             <th>#</th>
-            <th>ID</th>
+            <th>Category Image</th>
             <th>Category Name</th>
             <th>Brand</th>
 
