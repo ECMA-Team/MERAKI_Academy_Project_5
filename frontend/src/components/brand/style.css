@@ -226,8 +226,8 @@
   }
   .img_category_brands {
     width: 60px;
-    /* height: auto; */
-    /* margin: 20px 20px; */
+    height: auto;
+    margin: 20px 20px;
   }
 
   .contenar_category_brands {
@@ -243,7 +243,7 @@
   }
   .img_brand_brands {
     width: 10px;
-    /* height: auto; */
+    height: auto;
     position: relative;
     bottom: 20px;
   }
@@ -255,7 +255,7 @@
 
   .contenar_namecategoryand_bands img {
     width: 20px;
-    /* height: auto; */
+    height: auto;
     margin: auto;
   }
   .contenar_namecategoryand_bands p {
