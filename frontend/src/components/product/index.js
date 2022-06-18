@@ -31,7 +31,7 @@ const Product = () => {
       .get("https://meraki-project-5-backend.herokuapp.com/products")
       .then((result) => {
         setNumberOfPage(Math.ceil(result.data.result.length / 6));
-        setArrayofPage(Array(Math.ceil(result.data.result.length / 6)).fill(0));
+        setArrayofPage(Array(Math.ceil(result.data.result.length / 12)).fill(0));
       })
       .catch((err) => {
         console.log(err);
