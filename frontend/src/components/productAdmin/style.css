@@ -274,3 +274,13 @@ grid-template-areas: "a b" "c d" "e f"  ;
   }
 }
 
+.input_container input::placeholder {
+  color: rgb(129, 125, 125);
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+  }
