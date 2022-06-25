@@ -4,6 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { logoutAction } from "../../redux/reducers/auth";
 import { setShoeAction } from "../../redux/reducers/brand";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { AiOutlinePoweroff, AiOutlineSearch ,} from "react-icons/ai";
+import { FiLogIn,FiLogOut} from "react-icons/fi";
+
+
 import { getSearchAction } from "../../redux/reducers/sreach";
 import Getbrand from "../getbrand";
 
@@ -77,14 +81,21 @@ console.log(searchArray);
 
         {
           <div className="navbarsearch">
+            <form>
             <input
+            type="search"
               id="serxchinput"
-              placeholder="SEARCH"
+              placeholder="Search.."
               className="searchss"
+              name="search"
               onChange={(e) => {
                 searchFunction(e.target.value);
               }}
             />
+  <button type="submit">Search</button>
+</form>
+           
+           
             {Check ? (
               <div className="navbar_section">
                 {searchArray.length &&
@@ -133,7 +144,8 @@ console.log(searchArray);
                 navigate("/");
               }}
             >
-              Logout
+
+              <AiOutlinePoweroff/>
             </a>
             <Link className="cart" to="/cart">
               <i class="fa fa-cart-plus" aria-hidden="true"></i>
@@ -142,15 +154,24 @@ console.log(searchArray);
         ) : (
           <>
             <Link className="login_link" to="/login">
-              Login
+            <FiLogIn/>
             </Link>
             <Link className="register_link" to="/register">
-              Sign up
+              SignUp
             </Link>
           </>
         )}
       </div>
       <div className="added">
+      <i
+          onClick={() => {
+            dispatch(setShoeAction(!show));
+          }}
+          className="first_icon"
+          class="fa fa-bars"
+          aria-hidden="true"
+          
+        ></i>
         <a href="/">HOME</a>
         <a href="/contact">CONTACT</a>
         <a href="/privacy-policy">PRIVACY-POLICY</a>
