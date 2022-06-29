@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginAction } from "../../redux/reducers/auth";
 import { useNavigate } from "react-router-dom";
-import { orderAction , setIsAdmainAction } from "../../redux/reducers/auth";
+import { orderAction, setIsAdmainAction } from "../../redux/reducers/auth";
 
 import("./style.css");
 
@@ -41,17 +41,17 @@ const Login = () => {
       .then((result) => {
         if (result.data.result[0].role == "ADMIN") {
 
-          
-        dispatch(setIsAdmainAction(true));
 
-        navigate("/admin");
-        }else{
+          dispatch(setIsAdmainAction(true));
+
+          navigate("/admin");
+        } else {
 
 
-            dispatch(setIsAdmainAction(false));  
-            navigate("/")
+          dispatch(setIsAdmainAction(false));
+          navigate("/")
         }
-        
+
       })
       .catch((err) => {
         console.log(err);
@@ -65,9 +65,9 @@ const Login = () => {
         dispatch(loginAction(result.data.token));
         getLiveOrder();
 
-    
-        getRole();
 
+        getRole();
+        
 
 
 
@@ -84,33 +84,33 @@ const Login = () => {
     <div className="loginn">
 
 
-    <div className="loginDiv">
-    <h2 className="titleR">Login Form</h2>
-      <br></br>
-      <input
-      type={"email"}
-        className="input1"
-        placeholder="Enter Your email"
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <input
-      type={"password"}
+      <div className="loginDiv">
+        <h2 className="titleR">Login Form</h2>
+        <br></br>
+        <input
+          type={"email"}
+          className="input1"
+          placeholder="Enter Your email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          type={"password"}
 
-        className="input2"
-        placeholder="Enter Your Password"
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
+          className="input2"
+          placeholder="Enter Your Password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
 
-      <button className="button" onClick={login}>
-        Log in
-      </button>
-      <h1 className="ms">{message}</h1>
-      <LogGoogle />
-    </div>
+        <button className="button" onClick={login}>
+          Log in
+        </button>
+        <h1 className="ms">{message}</h1>
+        <LogGoogle />
+      </div>
     </div>
 
   );
