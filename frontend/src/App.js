@@ -27,10 +27,17 @@ import About from "./components/footer/about/about";
 import Contact from "./components/footer/contact/Contact";
 import Privacy from "./components/footer/privacy";
 import Getbrand from "./components/getbrand";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 // import { Chart } from "./components/chart";
 
 
 function App() {
+  const location = useLocation();
+  useEffect(() => {
+    // console.log(location);
+  }, [location.pathname]);
+
   return (
     <div className="App">
       {/* <Chart/> */}
@@ -65,7 +72,7 @@ function App() {
         <Route path="/order" element={<Order />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-   
+
         <Route path="/privacy-policy" element={<Privacy />}></Route>
         <Route path="/Admin/Orders" element={<AdminOrder />}></Route>
       </Routes>

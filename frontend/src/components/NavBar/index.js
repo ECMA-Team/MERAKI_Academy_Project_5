@@ -94,8 +94,6 @@ console.log(searchArray);
             />
   <button type="submit">Search</button>
 </form>
-           
-           
             {Check ? (
               <div className="navbar_section">
                 {searchArray.length &&
